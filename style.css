@@ -66,7 +66,40 @@
     color: #fff;
     cursor: pointer;
     font-size: 20px;
-    transition: all 0.3s ease-in-out;
-    
-    
+}
+.todo-items{
+    align-items: center;
+    background: #edeef0;
+    padding: 20px;
+    border-radius: 30px;
+}
+.todo-items ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+
+}
+.todo-items ul li::before{
+    content: '';
+    position: absolute;    
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url(images/uncheck.svg);
+    background-size: cover;
+    background-position: center;
+    left: 8px;
+    top: 12px;
+}
+.todo-items ul li.check{
+    color: #000;
+    text-decoration: line-through;    
+  
+}
+.todo-items ul li.check::before{
+    background-image: url(images/checked.svg);
+   
 }
