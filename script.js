@@ -13,9 +13,24 @@ function addTask() {
         outputField.appendChild(li);
         // Create a delete button for the new list item
         let deleteButton = document.createElement('button');    
-        deleteButton.innerHTML = "Delete";
+        deleteButton.innerHTML = "x";
         li.appendChild(deleteButton);
     }
     inputField.value = ""; // Clear the input field after adding the task
     inputField.focus(); // Set focus back to the input field
 }
+outputField.addEventListener('click', function(e) {
+    if(e.target.tagName === 'LI') {
+        // Toggle the class of the clicked list item
+        e.target.classList.toggle('check');
+    }
+
+    // Check if the clicked element is a button
+    if (e.target.tagName === 'BUTTON') {
+        // Remove the list item when the delete button is clicked
+        let li = e.target.parentNode;
+        outputField.removeChild(li);
+    }
+}
+
+);
